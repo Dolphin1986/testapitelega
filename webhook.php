@@ -13,7 +13,7 @@ $update_id = $update['update_id'];
 if ($update_id = $update_id) {
 	file_put_contents(__DIR__.'/last_log.txt', $update['message']['chat']['id']);
 } else {
-	file_put_contents(__DIR__.'/log.txt', $update['message']['chat']['id']);
+	file_put_contents(__DIR__.'/old_log.txt', $update['message']['chat']['id']);
 }
 
 
@@ -43,7 +43,7 @@ sendRequest('sendMessage',['chat_id'=> $chat_id, 'text'=> $time]);
 
 
 
-file_put_contents(__DIR__.'/log.txt', $update);
+// file_put_contents(__DIR__.'/log.txt', $update);
 
 
 
