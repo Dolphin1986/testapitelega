@@ -5,13 +5,17 @@
 
 $update = json_decode(file_get_contents('php://input'), JSON_OBJECT_AS_ARRAY);
 
-$time = file_put_contents(__DIR__.'/log.txt', $update['0']['time']);
+file_put_contents(__DIR__.'/last_log.txt', $update['0']['img_url']);
 
-if ($time = $time) {
-	file_put_contents(__DIR__.'/last_log.txt', $update['0']['img_url']);
-} else {
-	file_put_contents(__DIR__.'/log.txt', $update['0']['img_url']);
-}
+
+
+// $time = file_put_contents(__DIR__.'/log.txt', $update['0']['time']);
+
+// if ($time = $time) {
+// 	file_put_contents(__DIR__.'/last_log.txt', $update['0']['img_url']);
+// } else {
+// 	file_put_contents(__DIR__.'/log.txt', $update['0']['img_url']);
+// }
 
 
 
