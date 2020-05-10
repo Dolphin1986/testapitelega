@@ -8,7 +8,7 @@ $update = json_decode(file_get_contents('php://input'), JSON_OBJECT_AS_ARRAY);
 
 $update_id = file_put_contents(__DIR__.'/log.txt', $update['update_id']);
 
-file_put_contents(__DIR__.'/log.txt', file_get_contents('php://input');
+file_put_contents(__DIR__.'/log.txt', file_get_contents('php://input'));
 
 if ($update_id = $update_id) {
 	file_put_contents(__DIR__.'/last_log.txt', $update['message']['chat']['id']);
