@@ -38,7 +38,7 @@ function sendRequest($method, $params = [])
 $time = date('H:m:s');
 $chat_id = $update['message']['chat']['id'];
 
-sendRequest('sendMessage',['chat_id'=> $chat_id, 'text'=> $time]);
+sendRequest('getPhotoPath',['chat_id'=> $chat_id]);
 
 
 
