@@ -7,7 +7,7 @@ $data = json_decode($data, true);
 
 $text = $data['message']['text']; 
 
-$text = file_put_contents(__DIR__ . '/log.txt');
+file_put_contents(__DIR__ . '/log.txt',$text);
 
 ob_start();
 
