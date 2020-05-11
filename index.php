@@ -1,6 +1,9 @@
 <?php
 
 include 'webhook.php';
+if (!empty($data['message']['text'])) {
+	$text = $data['message']['text'];
+
 
 ?>
 
@@ -12,7 +15,13 @@ include 'webhook.php';
 </head>
 	
 	<body>
-		<h2>Текст сообщения вот:</h2>
+		<h2>Текст сообщения вот: 
+		<?=
+			echo $text;
+			}
+		?>
+	
+		</h2>
 		<br>
 		<h1>Тут должна быть картинка:</h1>
 	</body>
