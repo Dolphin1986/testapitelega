@@ -1,11 +1,10 @@
 <?php
 
-$data = file_get_contents(__DIR__ . '/log.txt');
+$data = file(__DIR__.'/log.txt',true);
 
-if (!empty($data['message']['text'])) {
-	$text = $data['message']['text'];
-		echo $text;
-	}
+echo "<pre>";
+print_r ($data);
+echo "<pre>";
 
 ?>
 

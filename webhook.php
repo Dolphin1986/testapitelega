@@ -6,10 +6,15 @@ $data = json_decode($data, true);
 ob_start();
 print_r($data);
 $out = ob_get_clean(); 
-file_put_contents(__DIR__ . '/log.txt', $out);
+file_put_contents(__DIR__ . '/last_log.txt', $out);
 
 
-
+if (!empty($data['message']['text'])) {
+	
+	$text = $data['message']['text'];
+	
+	$text = file_put_contents(__DIR__ . '/log.txt', $out);
+	}
 
 
 
