@@ -1,6 +1,6 @@
 <?php
 
-include 'webhook.php';
+$data = file_get_contents(__DIR__ . '/log.txt');
 
 if (!empty($data['message']['text'])) {
 	$text = $data['message']['text'];
