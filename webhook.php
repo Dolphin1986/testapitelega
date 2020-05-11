@@ -8,7 +8,7 @@ print_r($data);
 $out = ob_get_clean(); 
 file_put_contents(__DIR__ . '/last_log.txt', $out);
 
-$data['message']['text'] = file_put_contents(__DIR__ . '/log.txt', $out);
+$data['message']['text'] = file_put_contents(__DIR__ . '/log.txt');
 
 if (!empty($data['message']['text'])) {
 	
