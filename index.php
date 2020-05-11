@@ -1,6 +1,7 @@
 <?php
 
 include 'webhook.php';
+
 if (!empty($data['message']['text'])) {
 	$text = $data['message']['text'];
 
@@ -16,7 +17,7 @@ if (!empty($data['message']['text'])) {
 	
 	<body>
 		<h2>Текст сообщения вот: 
-		<?=
+		<?php
 			echo $text;
 			}
 		?>
