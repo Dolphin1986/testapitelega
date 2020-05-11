@@ -22,6 +22,9 @@ echo "<pre>";
 		?>
 		<br>
 		<h1>Тут должна быть картинка:</h1>
+		<img src="<?php
+			echo ($data);
+		?>">
 	</body>
 
 </html>
