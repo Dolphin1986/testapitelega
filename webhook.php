@@ -1,5 +1,8 @@
 <?php
 
+$token = '1228487916:AAHi6eOerKee0pp20YVbUgei57DILMQe33Y';
+
+
 $data = file_get_contents('php://input');
 $data = json_decode($data, true);
 
@@ -16,6 +19,29 @@ print_r($data);
 $out = ob_get_clean(); 
 
 file_put_contents(__DIR__ . '/last_log.txt', $out);
+
+
+
+
+if (!empty($data['message']['photo'])) {
+	$photo = array_pop($data['message']['photo']);
+	
+	$ch = curl_init('https://api.telegram.org/bot' . $token . '/getFile');  
+	curl_setopt($ch, CURLOPT_POST, 1);  
+	curl_setopt($ch, CURLOPT_POSTFIELDS, array('file_id' => $photo['file_id']));
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	$res = curl_exec($ch);
+	curl_close($ch);
+	
+	$res = json_decode($res, true);
+	if ($res['ok']) {
+		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path'];
+		file_put_contents(__DIR__ . '/log.txt', $src);
+		$dest = __DIR__ . '/' . time() . '-' . basename($src);
+		copy($src, $dest);
+	}
+}
 
 
 
