@@ -1,44 +1,61 @@
 <?php
 
-const TOKEN = '1228487916:AAHi6eOerKee0pp20YVbUgei57DILMQe33Y';
-const BASE_URL = 'https://api.telegram.org/bot'.TOKEN.'/';
+$data = file_get_contents('php://input');
+$data = json_decode($data, true);
 
-$update = json_decode(file_get_contents('php://input'), JSON_OBJECT_AS_ARRAY);
-
-file_put_contents(__DIR__.'/log.txt', file_get_contents('php://input'));
-
-$update_id = $update['update_id'];
-
-
-if ($update_id = $update_id) {
-	file_put_contents(__DIR__.'/last_log.txt', $update['message']['chat']['id']);
-} else {
-	file_put_contents(__DIR__.'/old_log.txt', $update['message']['chat']['id']);
-}
+ob_start();
+print_r($data);
+$out = ob_get_clean(); 
+file_put_contents(__DIR__ . '/log.txt', $out);
 
 
 
 
 
 
-function sendRequest($method, $params = []) 
 
-{
 
-	if (!empty($params)) {
-		$url = BASE_URL.$method.'?'. http_build_query($params);
-	} else {
-		$url = BASE_URL.$method;
-	}
+// ---------------------------------------------------
 
-	return json_decode(file_get_contents($url), JSON_OBJECT_AS_ARRAY);
+// const TOKEN = '1228487916:AAHi6eOerKee0pp20YVbUgei57DILMQe33Y';
+// const BASE_URL = 'https://api.telegram.org/bot'.TOKEN.'/';
 
-}
+// $update = json_decode(file_get_contents('php://input'), JSON_OBJECT_AS_ARRAY);
 
-$time = date('H:m:s');
-$chat_id = $update['message']['chat']['id'];
+// file_put_contents(__DIR__.'/log.txt', file_get_contents('php://input'));
 
-sendRequest('getPhotoPath',['chat_id'=> $chat_id]);
+// $update_id = $update['update_id'];
+
+
+// if ($update_id = $update_id) {
+// 	file_put_contents(__DIR__.'/last_log.txt', $update['message']['chat']['id']);
+// } else {
+// 	file_put_contents(__DIR__.'/old_log.txt', $update['message']['chat']['id']);
+// }
+
+
+
+
+
+
+// function sendRequest($method, $params = []) 
+
+// {
+
+// 	if (!empty($params)) {
+// 		$url = BASE_URL.$method.'?'. http_build_query($params);
+// 	} else {
+// 		$url = BASE_URL.$method;
+// 	}
+
+// 	return json_decode(file_get_contents($url), JSON_OBJECT_AS_ARRAY);
+
+// }
+
+// $time = date('H:m:s');
+// $chat_id = $update['message']['chat']['id'];
+
+// sendRequest('getFile',['chat_id'=> $chat_id]);
 
 
 
