@@ -1,9 +1,9 @@
 <?php
 
-$data = file(__DIR__.'/log.txt',true);
+$data = file_get_contents(__DIR__.'/log.txt',true);
 
 echo "<pre>";
-print_r ($data);
+echo ($data);
 echo "<pre>";
 
 ?>
