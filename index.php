@@ -1,4 +1,6 @@
 <?php 
+header("Refresh:1");
+
 include 'img.php';
 
  ?>
@@ -11,7 +13,12 @@ include 'img.php';
 <body>  
       
     <div id="content">
-    	<h3>Hello world - <?php  ?></h3>
+    	<h3>Hello world - 
+    		<?php 
+    			echo "<h1>".$data."</h1>";
+    			echo "<h1>".$data."</h1>"; 
+    		?>
+    	</h3>
     </div>  
       
 </body>  
