@@ -17,7 +17,7 @@ $img = file_get_contents(__DIR__.'/img.txt',true);
 					{  
 					    jQuery.ajax({  
 					        url: "hook.php",
-					        type : 'post',
+					        type : 'get',
 					        success: function(html){  
 					            jQuery("#content").html(jQuery('.data', data).html());
 					        }  
