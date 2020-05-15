@@ -7,8 +7,7 @@ $data = file_get_contents(__DIR__.'/log.txt',true);
 
 if ($data = $data){
 	echo "<h1>".$data."</h1>";
-
 } else {
-	echo "<h1>".$data."</h1>";
+	header("Refresh:0");
 }
 
