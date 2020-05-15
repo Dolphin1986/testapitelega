@@ -12,6 +12,19 @@ $img = file_get_contents(__DIR__.'/img.txt',true);
 <html>
 <head>
 	<title>Test Slider</title>
+	<script type="text/javascript">
+		function nikRefresh()  
+					{  
+					    jQuery.ajax({  
+					        url: "hook.php",
+					        type : 'post',
+					        success: function(html){  
+					            jQuery("#content").html(jQuery('.data', data).html());
+					        }  
+					    });  
+					}
+
+	</script>
 </head>
 	
 	<body>
@@ -21,9 +34,14 @@ $img = file_get_contents(__DIR__.'/img.txt',true);
 		?>
 		<br>
 		<h1>Тут должна быть картинка:</h1>
-		<img src="<?php
-			echo ($img);
-		?>">
+		<div class="data">
+			<img src="<?php
+				echo ($img);
+			?>">
+		</div>
 	</body>
+
+
+
 
 </html>
