@@ -1,10 +1,9 @@
 <?php
 
 $data = file_get_contents(__DIR__.'/log.txt',true);
+$img = file_get_contents(__DIR__.'/img.txt',true);
 
-// echo "<pre>";
-// echo ($data);
-// echo "<pre>";
+
 
 ?>
 
@@ -23,7 +22,7 @@ $data = file_get_contents(__DIR__.'/log.txt',true);
 		<br>
 		<h1>Тут должна быть картинка:</h1>
 		<img src="<?php
-			echo ($data);
+			echo ($img);
 		?>">
 	</body>
 
