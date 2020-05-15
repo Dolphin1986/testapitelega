@@ -1,5 +1,5 @@
 <?php 
-header("Refresh:2");
+header("Refresh:0");
 exit;
 
 
