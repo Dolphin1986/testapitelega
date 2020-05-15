@@ -1,4 +1,5 @@
 <?php 
+header("Refresh:0");
 include 'img.php';
 
 
