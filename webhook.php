@@ -37,7 +37,11 @@ if (!empty($data['message']['photo'])) {
 	$res = json_decode($res, true);
 	if ($res['ok']) {
 		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path']."\r\n";
-		file_put_contents(__DIR__ . '/img.txt', $src, FILE_APPEND);
+
+		$img_array = [time('h','m','s')=> $src];
+
+		// file_put_contents(__DIR__ . '/img.txt', $src, FILE_APPEND);
+		file_put_contents(__DIR__ . '/img.txt', $img_array, FILE_APPEND);
 		// $dest = __DIR__ . '/img' . time() . '-' . basename($src);
 		// copy($src, $dest);
 	}
