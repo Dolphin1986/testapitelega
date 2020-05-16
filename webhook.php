@@ -38,7 +38,7 @@ if (!empty($data['message']['photo'])) {
 
 	if ($res['ok']) {
 
-		$src  = 'https://api.telegram.org/file/bot'. $token . / . $res['result']['file_path'];
+		$src  = 'https://api.telegram.org/file/bot'. $token . '/' . $res['result']['file_path'];
 
 		// $img_aray = ['01' => $src];
 
