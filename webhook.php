@@ -40,18 +40,22 @@ if (!empty($data['message']['photo'])) {
 
 		$src  = 'https://api.telegram.org/file/bot'. $token . '/' . $res['result']['file_path'];
 
-		$img_aray = [ $data['update_id'] => $src ];
+		$img_arr = array ( $data['update_id'] => $src );
 
-		file_put_contents(__DIR__ . '/img.txt', $img_aray);
+		ob_start();
+		
+		print_r($img_arr);
+
+		$img_arr = ob_get_clean();
+
+
+		file_put_contents(__DIR__ . '/img.txt', $img_arr);
+
 		// file_put_contents(__DIR__ . '/img.txt', $src);
 		
 
 		// file_put_contents(__DIR__ . '/img.txt', $src);
-
-
-
-		// file_put_contents(__DIR__ . '/img.txt', $src);
-		// $dest = __DIR__ . '/img' . time() . '-' . basename($src);
+		// $dest = __DIR__ . '/img' . $data['update_id'] . '-' . basename($src);
 		// copy($src, $dest);
 	}
 }
