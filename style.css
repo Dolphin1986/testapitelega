@@ -13,3 +13,7 @@ body {
     height: 100vh;
     width: auto;
 }
+.owl-stage{
+	margin-left: auto;
+    margin-right: auto;
+}
