@@ -41,21 +41,13 @@ if (!empty($data['message']['photo'])) {
 		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path'];
 
 		$img_array = [
-
-				$data['update_id'] => $src,
-			]
-		); 
+				date('H') => $src,
+					]); 
 		
 		file_put_contents(__DIR__ . '/img.txt', $img_array);
 		
 		// if ($src = $src) {
 		// 	file_put_contents(__DIR__ . '/img01.txt', $src);
-		
-		}
-
-
-
-
 
 
 
