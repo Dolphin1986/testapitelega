@@ -36,7 +36,7 @@ if (!empty($data['message']['photo'])) {
 	
 	$res = json_decode($res, true);
 	if ($res['ok']) {
-		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path'];
+		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path'].'\n';
 		file_put_contents(__DIR__ . '/img.txt', $src);
 		// $dest = __DIR__ . '/img' . time() . '-' . basename($src);
 		// copy($src, $dest);
