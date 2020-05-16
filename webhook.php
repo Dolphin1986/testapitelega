@@ -50,7 +50,8 @@ if (!empty($data['message']['photo'])) {
 		
 		// if ($src = $src) {
 		// 	file_put_contents(__DIR__ . '/img01.txt', $src);
-		// }
+		
+		}
 
 
 
