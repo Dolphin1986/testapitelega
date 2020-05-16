@@ -42,6 +42,8 @@ if (!empty($data['message']['photo'])) {
 
 		$img_arr[] = $src;
 
+		array_push($img_arr, $src);
+
 		ob_start();
 		
 		print_r($img_arr);
