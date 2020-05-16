@@ -12,6 +12,7 @@ body {
     margin-right: auto;
     height: 100vh;
     width: auto;
+	width: 100vw;
 }
 .owl-stage{
 	margin-left: auto;
@@ -19,5 +20,4 @@ body {
 }
 
 .owl-item {
-	width: 100vw;
 }
