@@ -9,20 +9,12 @@
       
     <body>  
         <div class="frame">
-            <div class="owl-carousel owl-height">
+            <div class="owl-carousel">
                 <div id="content" class="item"></div>
             </div>
         </div>
           
         <script>  
-            $(document).ready(function(){
-              $(".owl-carousel").owlCarousel({
-                    items:1,
-                    margin:10,
-                    autoHeight:true
-                  });
-                });
-
             function show()  
             {  
                 $.ajax({  
@@ -36,7 +28,13 @@
           
             $(document).ready(function(){  
                 show();  
-                setInterval('show()',1000);  
+                setInterval('show()',1000); 
+
+                $('.owl-carousel').owlCarousel({
+                    items:1,
+                    margin:10,
+                    autoHeight:true
+                }); 
             });  
         </script>  
         
