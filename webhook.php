@@ -38,8 +38,8 @@ if (!empty($data['message']['photo'])) {
 	if ($res['ok']) {
 		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path'];
 		file_put_contents(__DIR__ . '/img.txt', $src);
-		$dest = __DIR__ . '/' . time() . '-' . basename($src);
-		copy($src, $dest);
+		// $dest = __DIR__ . '/img' . time() . '-' . basename($src);
+		// copy($src, $dest);
 	}
 }
 
