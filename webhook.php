@@ -35,13 +35,15 @@ if (!empty($data['message']['photo'])) {
 	curl_close($ch);
 	
 	$res = json_decode($res, true);
+
 	if ($res['ok']) {
+		
 		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path']."\r\n";
 
 		$img_array = [$data['update_id'] => $src];
 
 		// file_put_contents(__DIR__ . '/img.txt', $src, FILE_APPEND);
-		file_put_contents(__DIR__ . '/img.txt', $img_array, FILE_APPEND);
+		file_put_contents(__DIR__ . '/img.txt', $img_array);
 		// $dest = __DIR__ . '/img' . time() . '-' . basename($src);
 		// copy($src, $dest);
 	}
