@@ -43,7 +43,7 @@ if (!empty($data['message']['photo'])) {
 		$img_aray = ['01' => $src];
 
 		file_put_contents(__DIR__ . '/img.txt', $img_aray);
-		// file_put_contents(__DIR__ . '/img.txt', $src);
+		file_put_contents(__DIR__ . '/img.txt', $src);
 		
 
 		// file_put_contents(__DIR__ . '/img.txt', $src);
