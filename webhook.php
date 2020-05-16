@@ -40,7 +40,7 @@ if (!empty($data['message']['photo'])) {
 
 		$src  = 'https://api.telegram.org/file/bot'. $token . / . $res['result']['file_path'];
 
-		$img_aray = ['01' => $src]
+		$img_aray = ['01' => $src];
 
 		file_put_contents(__DIR__ . '/img.txt', $img_aray);
 		// file_put_contents(__DIR__ . '/img.txt', $src);
