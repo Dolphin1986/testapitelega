@@ -38,12 +38,27 @@ if (!empty($data['message']['photo'])) {
 
 	if ($res['ok']) {
 		
-		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path']."\r\n";
+		$src  = 'https://api.telegram.org/file/bot' . $token . '/' . $res['result']['file_path'];
 
-		$img_array[] = [$data['update_id'] => $src];
+		$img_array = [
+
+				$data['update_id'] => $src,
+			]
+		); 
+		
+		file_put_contents(__DIR__ . '/img.txt', $img_array);
+		
+		// if ($src = $src) {
+		// 	file_put_contents(__DIR__ . '/img01.txt', $src);
+		// }
+
+
+
+
+
+
 
 		// file_put_contents(__DIR__ . '/img.txt', $src, FILE_APPEND);
-		file_put_contents(__DIR__ . '/img.txt', print_r($img_array));
 		// $dest = __DIR__ . '/img' . time() . '-' . basename($src);
 		// copy($src, $dest);
 	}
