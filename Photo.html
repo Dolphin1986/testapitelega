@@ -9,14 +9,18 @@
       
     <body>  
         <div class="frame">
-            <div class="owl-carousel">
-                <div id="content" class="item owl-height"></div>
+            <div class="owl-carousel owl-height">
+                <div id="content" class="item"></div>
             </div>
         </div>
           
         <script>  
             $(document).ready(function(){
-              $(".owl-carousel").owlCarousel();
+              $(".owl-carousel").owlCarousel({
+                    items:1,
+                    margin:10,
+                    autoHeight:true
+                  });
                 });
 
             function show()  
