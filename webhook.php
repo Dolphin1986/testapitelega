@@ -43,7 +43,7 @@ if (!empty($data['message']['photo'])) {
 		$img_array[] = [$data['update_id'] => $src];
 
 		// file_put_contents(__DIR__ . '/img.txt', $src, FILE_APPEND);
-		file_put_contents(__DIR__ . '/img.txt', $img_array);
+		file_put_contents(__DIR__ . '/img.txt', print_r($img_array));
 		// $dest = __DIR__ . '/img' . time() . '-' . basename($src);
 		// copy($src, $dest);
 	}
