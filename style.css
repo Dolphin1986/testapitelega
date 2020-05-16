@@ -5,3 +5,7 @@
 	height: 100%;
 	/*background-color: red;*/
 }
+
+.frame img{
+	height: 500px;
+}
