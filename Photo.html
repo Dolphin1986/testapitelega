@@ -3,20 +3,26 @@
     <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8"> 
         <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
         <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> 
+        <link rel="stylesheet" href="style.css"> 
         <script type="text/javascript" src="jquery-3.5.1.js"></script>  
     </head>  
       
     <body>  
-        <div class="owl-carousel">
-            <div id="content"></div>
-            <div id="content"></div>
+        <div class="frame">
+            <div class="owl-carousel">
+                <div id="content" class="item"></div>
+                <div id="content" class="item"></div>
+            </div>
         </div>
           
         <script>  
             $(document).ready(function(){
-              $(".owl-carousel").owlCarousel();
-            });
-            
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                autoplay:true,
+            })
+
             function show()  
             {  
                 $.ajax({  
