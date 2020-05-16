@@ -42,11 +42,11 @@ if (!empty($data['message']['photo'])) {
 
 		$img_arr = array ( $data['update_id'] => $src );
 
-		ob_start();
+		// ob_start();
 		
-		print_r($img_arr);
+		// print_r($img_arr);
 
-		$img_arr = ob_get_clean();
+		// $img_arr = ob_get_clean();
 
 
 		file_put_contents(__DIR__ . '/img.txt', $img_arr);
