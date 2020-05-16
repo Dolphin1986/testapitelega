@@ -37,11 +37,16 @@ if (!empty($data['message']['photo'])) {
 	$res = json_decode($res, true);
 
 	if ($res['ok']) {
-		
-		$src  = [ $data['update_id'] => "https://api.telegram.org/file/bot. $token . / . $res['result']['file_path']"];
 
+		$src  = 'https://api.telegram.org/file/bot'. $token . / . $res['result']['file_path'];
+
+		$img_aray = ['01' => $src]
+
+		file_put_contents(__DIR__ . '/img.txt', $img_aray);
+		// file_put_contents(__DIR__ . '/img.txt', $src);
 		
-		file_put_contents(__DIR__ . '/img.txt', $src);
+
+		// file_put_contents(__DIR__ . '/img.txt', $src);
 
 
 
