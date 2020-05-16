@@ -40,9 +40,7 @@ if (!empty($data['message']['photo'])) {
 
 		$src  = 'https://api.telegram.org/file/bot'. $token . '/' . $res['result']['file_path'];
 
-		$img_arr[] = $src;
-
-		array_push($img_arr, $src);
+		$img_arr[] = $src;	
 
 		ob_start();
 		
@@ -51,6 +49,19 @@ if (!empty($data['message']['photo'])) {
 		$img_arr = ob_get_clean();
 
 		file_put_contents(__DIR__ . '/img.txt', $img_arr);
+
+		if ($src != $src){
+			
+			array_push($img_arr, $src);
+			
+			ob_start();
+		
+			print_r($img_arr);
+
+			$img_arr = ob_get_clean();
+
+			file_put_contents(__DIR__ . '/img.txt', $img_arr);
+		}
 
 		// file_put_contents(__DIR__ . '/img.txt', $src);		
 		// file_put_contents(__DIR__ . '/img.txt', $src);
