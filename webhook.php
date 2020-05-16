@@ -43,14 +43,14 @@ if (!empty($data['message']['photo'])) {
 		// $img_aray = ['01' => $src];
 
 		// file_put_contents(__DIR__ . '/img.txt', $img_aray);
-		file_put_contents(__DIR__ . '/img.txt', $src);
+		// file_put_contents(__DIR__ . '/img.txt', $src);
 		
 
 		// file_put_contents(__DIR__ . '/img.txt', $src);
 
 
 
-		// file_put_contents(__DIR__ . '/img.txt', $src, FILE_APPEND);
+		file_put_contents(__DIR__ . '/img.txt', $src, FILE_APPEND);
 		// $dest = __DIR__ . '/img' . time() . '-' . basename($src);
 		// copy($src, $dest);
 	}
