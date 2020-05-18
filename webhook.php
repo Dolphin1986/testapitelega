@@ -42,18 +42,9 @@ if (!empty($data['message']['photo'])) {
 
 		$img_arr[] = "$src";
 
-		$data = serialize($img_arr); 
-
-		file_put_contents(__DIR__ . '/img.txt', $data);
-	
-
-
-
-		// file_put_contents(__DIR__ . '/img.txt', $src);		
-		// file_put_contents(__DIR__ . '/img.txt', $src);
-		// $dest = __DIR__ . '/img' . $data['update_id'] . '-' . basename($src);
-		// copy($src, $dest);
 	}
+		$data_img = serialize($img_arr); 
+		file_put_contents(__DIR__ . '/img.txt', $data_img);
 }
 
 
