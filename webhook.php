@@ -2,7 +2,6 @@
 
 $token = '1228487916:AAHi6eOerKee0pp20YVbUgei57DILMQe33Y';
 
-
 $data = file_get_contents('php://input');
 $data = json_decode($data, true);
 
@@ -20,7 +19,6 @@ $out = ob_get_clean();
 
 file_put_contents(__DIR__ . '/last_log.txt', $out);
 
-$img_arr = array("/img/logo_lip.jpg");
 
 
 if (!empty($data['message']['photo'])) {
@@ -41,9 +39,29 @@ if (!empty($data['message']['photo'])) {
 	}
 }
 
+if (!empty($img_arr)){
+
 	$img_arr[] = "$src";
 	$data_img = serialize($img_arr); 
 	file_put_contents(__DIR__ . '/img.txt', $data_img);
+
+} else {
+
+	$img_arr[] = "/img/logo_lip.jpg";
+	$data_img = serialize($img_arr); 
+	file_put_contents(__DIR__ . '/img.txt', $data_img);
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
