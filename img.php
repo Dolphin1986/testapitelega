@@ -8,11 +8,11 @@ $img = file_get_contents(__DIR__.'/img.txt',true);
 $img_array = unserialize($img);
 
 
-print_r ($img_array);
+// print_r ($img_array);
 
-// foreach ($img_array as $key => $value) {
-// 	echo '<img src="'.$value.'">';
-// }
+foreach ($img_array as $key => $value) {
+	echo '<img src="'.$value.'">';
+}
 
 
 
