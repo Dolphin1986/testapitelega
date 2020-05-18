@@ -4,15 +4,15 @@ body {
 .frame {
 	margin-left: auto;
 	margin-right: auto;
-	height: 100%;
+	/*height: 100%;*/
 }
 
 .frame img{
 	margin-left: auto;
     margin-right: auto;
-    height: 100vh;
+    /*height: 100vh;*/
     width: auto;
-	width: 100vw;
+	/*width: 100vw;*/
 }
 .owl-stage{
 	margin-left: auto;
