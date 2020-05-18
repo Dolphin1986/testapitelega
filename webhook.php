@@ -45,9 +45,9 @@ $img_array = unserialize($img);
 
 unset($img);
 
-$img_arr[] = "$src";
+$img_array[] = "$src";
 
-$data_img = serialize($img_arr); 
+$data_img = serialize($img_array); 
 
 file_put_contents(__DIR__ . '/img.txt', $data_img);
 
