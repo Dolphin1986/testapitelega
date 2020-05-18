@@ -43,19 +43,24 @@ $img = file_get_contents(__DIR__.'/img.txt',true);
 
 $img_array = unserialize($img);
 
-if (!empty($img_array)){
+unset($img);
 
-	$img_arr[] = "$src";
-	$data_img = serialize($img_arr); 
-	file_put_contents(__DIR__ . '/img.txt', $data_img);
+$img_arr[] = "$src";
 
-} else {
+$data_img = serialize($img_arr); 
 
-	$img_arr[] = "/img/logo_lip.jpg";
-	$data_img = serialize($img_arr); 
-	file_put_contents(__DIR__ . '/img.txt', $data_img);
+file_put_contents(__DIR__ . '/img.txt', $data_img);
 
-}
+// if (!empty($img_array)){
+
+
+// } else {
+
+// 	$img_arr[] = "/img/logo_lip.jpg";
+// 	$data_img = serialize($img_arr); 
+// 	file_put_contents(__DIR__ . '/img.txt', $data_img);
+
+// }
 
 
 
