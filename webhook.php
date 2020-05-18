@@ -40,7 +40,7 @@ if (!empty($data['message']['photo'])) {
 
 		$src  = 'https://api.telegram.org/file/bot'. $token . '/' . $res['result']['file_path'];
 
-		array_push($img_arr, "$src");
+		$img_arr[] = "$src";
 
 		$data = serialize($img_arr); 
 

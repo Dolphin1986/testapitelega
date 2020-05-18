@@ -8,9 +8,6 @@ $img = file_get_contents(__DIR__.'/img.txt',true);
 $img_array = unserialize($img);
 
 
-
-echo $img_array;
-
 print_r ($img_array);
 
 foreach ($img_array as $key => $value) {
