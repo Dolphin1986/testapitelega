@@ -12,7 +12,7 @@ include 'img.php';
   
 <body>  
       
-    <div id="content">
+    <div id="content" class="item">
     	<h3>Hello world - 
     		<?php 
     			// echo "<h1>".$data."</h1>";
