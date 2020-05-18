@@ -39,15 +39,19 @@ if (!empty($data['message']['photo'])) {
 	}
 }
 
-if (empty($img_arr) = false){
+$img = file_get_contents(__DIR__.'/img.txt',true);
 
-	$img_arr[] = "/img/logo_lip.jpg";
+$img_array = unserialize($img);
+
+if (!empty($img_array)){
+
+	$img_arr[] = "$src";
 	$data_img = serialize($img_arr); 
 	file_put_contents(__DIR__ . '/img.txt', $data_img);
 
 } else {
 
-	$img_arr[] = "$src";
+	$img_arr[] = "/img/logo_lip.jpg";
 	$data_img = serialize($img_arr); 
 	file_put_contents(__DIR__ . '/img.txt', $data_img);
 
