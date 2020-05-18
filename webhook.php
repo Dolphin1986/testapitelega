@@ -39,18 +39,17 @@ if (!empty($data['message']['photo'])) {
 	}
 }
 
-if (!empty($img_arr)){
-
-	$img_arr[] = "$src";
-	$data_img = serialize($img_arr); 
-	file_put_contents(__DIR__ . '/img.txt', $data_img);
-
-} else {
+if (empty($img_arr) = false){
 
 	$img_arr[] = "/img/logo_lip.jpg";
 	$data_img = serialize($img_arr); 
 	file_put_contents(__DIR__ . '/img.txt', $data_img);
 
+} else {
+
+	$img_arr[] = "$src";
+	$data_img = serialize($img_arr); 
+	file_put_contents(__DIR__ . '/img.txt', $data_img);
 
 }
 
