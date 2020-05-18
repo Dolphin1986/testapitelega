@@ -10,9 +10,9 @@ $img_array = unserialize($img);
 
 print_r ($img_array);
 
-foreach ($img_array as $key => $value) {
-	echo '<img src="'.$value.'">';
-}
+// foreach ($img_array as $key => $value) {
+// 	echo '<img src="'.$value.'">';
+// }
 
 
 
