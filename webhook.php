@@ -20,7 +20,7 @@ $out = ob_get_clean();
 
 file_put_contents(__DIR__ . '/last_log.txt', $out);
 
-$img_arr = array();
+$img_arr = array("__DIR__.'/img/logo_lip.jpg'");
 
 
 if (!empty($data['message']['photo'])) {
@@ -40,12 +40,9 @@ if (!empty($data['message']['photo'])) {
 
 		$src  = 'https://api.telegram.org/file/bot'. $token . '/' . $res['result']['file_path'];
 
-
 		array_push($img_arr, "$src");
 
-
-		// Запись.
-		$data = serialize($img_arr);      // PHP формат сохраняемого значения.
+		$data = serialize($img_arr); 
 
 		file_put_contents(__DIR__ . '/img.txt', $data);
 	
