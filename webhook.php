@@ -20,7 +20,7 @@ $out = ob_get_clean();
 
 file_put_contents(__DIR__ . '/last_log.txt', $out);
 
-$img_arr = array("__DIR__.'/img/logo_lip.jpg'");
+$img_arr = array("/img/logo_lip.jpg");
 
 
 if (!empty($data['message']['photo'])) {
