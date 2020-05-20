@@ -11,7 +11,7 @@ $img_array = unserialize($img);
 // print_r ($img_array);
 
 foreach ($img_array as $key => $value) {
-	echo '<div><img src="'.$value.'"></div>';
+	echo '<div><img data-lazy="'.$value.'"></div>';
 }
 
 
