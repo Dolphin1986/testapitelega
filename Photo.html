@@ -15,8 +15,21 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>
-        <script>  
-            
+        <script>
+            var $opts = {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                // autoplay: true,
+                autoplaySpeed: 2000,
+                infinite: true,
+                slidesToShow: 1,
+                adaptiveHeight: true
+                reInit: slick,
+            }
+
+            $('.photo_slider').slick('unslick');
+
+            $('.slider').slick('unslick');
 
             function show()  
             {  
@@ -25,30 +38,14 @@
                     cache: false,  
                     success: function(html){  
                         $("#content").html(html); 
-                        $('.photo_slider').slick(); 
+                        $('.photo_slider').slick($opts);
                     }  
-                });  
-
-                
+                });   
             }  
-          
             $(document).ready(function(){  
                 show();  
                 setInterval(show,2000);
-
-                $('.photo_slider').slick({
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    // autoplay: true,
-                    autoplaySpeed: 2000,
-                    infinite: true,
-                    slidesToShow: 1,
-                    adaptiveHeight: true
-                    reInit: slick,
-                }); 
             }); 
-
-             
         </script>
     </body>  
     </html>
