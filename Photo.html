@@ -23,14 +23,12 @@
                     cache: false,  
                     success: function(html){  
                         $("#content").html(html);  
+
                         setTimeout(function () {
                         $(".photo_slider").not('.slick-initialized').slick(options)
                     }, 500);
                     }  
                 });  
-            }  
-          
-            $(document).ready(function(){  
 
                 $('.photo_slider').slick({
                     slidesToShow: 2,
@@ -40,10 +38,13 @@
                     infinite: true,
                     slidesToShow: 1,
                     adaptiveHeight: true
+                    reInit: slick,
                 });
-
+            }  
+          
+            $(document).ready(function(){  
                 show();  
-                setInterval(show,5000);
+                setInterval(show,2000);
             }); 
 
              
