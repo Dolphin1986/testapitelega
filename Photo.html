@@ -23,7 +23,9 @@
                     url: "img.php",  
                     cache: false,  
                     success: function(html){  
-                        $("#content").html(html);  
+                        $("#content").html(html);
+                        
+                        setTimeout(function () {$(".photo_slider").slick(options)}, 500);  
                     }  
                 });  
             }  
