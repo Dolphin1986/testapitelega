@@ -16,30 +16,29 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <script>  
+            $('.photo_slider').slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                // autoplay: true,
+                autoplaySpeed: 2000,
+                infinite: true,
+                slidesToShow: 1,
+                adaptiveHeight: true
+                reInit: slick,
+            }); 
+
             function show()  
             {  
                 $.ajax({  
                     url: "img.php",  
                     cache: false,  
                     success: function(html){  
-                        $("#content").html(html);  
-
-                        setTimeout(function () {
-                        $(".photo_slider").not('.slick-initialized').slick(options)
-                    }, 500);
+                        $("#content").html(html); 
+                        $('.photo_slider').slick(); 
                     }  
                 });  
 
-                $('.photo_slider').slick({
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    // autoplay: true,
-                    autoplaySpeed: 2000,
-                    infinite: true,
-                    slidesToShow: 1,
-                    adaptiveHeight: true
-                    reInit: slick,
-                });
+                
             }  
           
             $(document).ready(function(){  
