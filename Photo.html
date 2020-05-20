@@ -8,9 +8,13 @@
       
     <body>  
 
-        <div class="photo_slider" id="content">
+        <div class="photo_slider" id="content_01">
             <div><img src="img/logo_lip.jpg"></div>
             <div><img src="img/test_01.jpg"></div>
+        </div> 
+
+        <div class="photo_slider" id="content">
+
         </div>
                 
           
@@ -24,14 +28,12 @@
                     url: "img.php",  
                     cache: false,  
                     success: function(html){  
-                        $("#content_01").html(html);  
+                        $("#content").html(html);  
                     }  
                 });  
             }  
           
             $(document).ready(function(){  
-                show();  
-                setInterval('show()',1000);
 
                 $('.photo_slider').slick({
                     slidesToShow: 2,
@@ -42,6 +44,9 @@
                     slidesToShow: 1,
                     adaptiveHeight: true
                 });
+
+                show();  
+                setInterval('show()',1000);
             }); 
 
              
