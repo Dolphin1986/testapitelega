@@ -16,18 +16,6 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <script>
-            var $opts = {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                // autoplay: true,
-                autoplaySpeed: 2000,
-                infinite: true,
-                slidesToShow: 1,
-                adaptiveHeight: true
-                reInit: slick,
-            }
-
-            $('.photo_slider').slick('unslick');
 
             function show() 
             {  
@@ -41,9 +29,21 @@
             }  
 
             $(document).ready(function(){  
+
                 show();  
+                
                 setInterval('show()',2000);
-                $('.photo_slider').slick($opts);
+                
+                $('.photo_slider').slick({
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    // autoplay: true,
+                    autoplaySpeed: 2000,
+                    infinite: true,
+                    slidesToShow: 1,
+                    adaptiveHeight: true
+                    reInit: slick,
+                });
             }); 
         </script>
     </body>  
