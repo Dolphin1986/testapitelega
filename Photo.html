@@ -23,6 +23,9 @@
                     cache: false,  
                     success: function(html){  
                         $("#content").html(html);  
+                        setTimeout(function () {
+                        $(".photo_slider").not('.slick-initialized').slick(options)
+                    }, 500);
                     }  
                 });  
             }  
