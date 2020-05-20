@@ -8,19 +8,13 @@
     </head>  
       
     <body>  
-        <div >
+        <div class="frame">
+            <div class="owl-carousel" id="content">
                
                    
-        </div>
-         <div class="slider">
-            <div class="slider__wrapper">
-              <div id="content">
-                
-              </div>
             </div>
-        <a class="slider__control slider__control_left" href="#" role="button"></a>
-        <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
-  </div>
+        </div>
+      
           
         <script>  
             function show()  
@@ -36,9 +30,16 @@
           
             $(document).ready(function(){  
                 show();  
-                setInterval('show()',1000);
+                setInterval('show()',1000); 
+
+                $('.owl-carousel').owlCarousel({
+                    loop:true,
+                    margin:10,
+                    autoplay: true,
+                    autoplayTimeout: 5000
+                }); 
             });  
         </script>  
-        <script src="slider.js"></script>
+        <script src="owlcarousel/owl.carousel.min.js"></script>
     </body>  
     </html>

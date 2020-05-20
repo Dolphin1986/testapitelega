@@ -1,0 +1,23 @@
+body {
+	margin: 0px;
+}
+.frame {
+	margin-left: auto;
+	margin-right: auto;
+	/*height: 100%;*/
+}
+
+.frame img{
+	margin-left: auto;
+    margin-right: auto;
+    /*height: 100vh;*/
+    width: auto;
+	/*width: 100vw;*/
+}
+.owl-stage{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.owl-item {
+}
