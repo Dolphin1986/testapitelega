@@ -7,7 +7,7 @@
     </head>  
       
     <body>  
-
+        
         <div class="photo_slider" id="content">
             <div><img src="img/logo_lip.jpg"></div>
             <div><img src="img/test_01.jpg"></div>
@@ -17,23 +17,21 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <script>
-
-            function show() 
-                {  
-                    $.ajax({  
-                        url: "img.php",  
-                        cache: false,  
-                        success: function(html){  
-                            $("#content").html(html); 
-                        }
-                    });   
-                }  
-
+            function show()  
+            {  
+                $.ajax({  
+                    url: "img.php",  
+                    cache: false,  
+                    success: function(html){  
+                        $("#content").html(html);  
+                    }  
+                });  
+            }  
+          
             $(document).ready(function(){  
-                
-                show();
-                setInterval('show()',2000);
-                
+                show();  
+                setInterval('show()',1000);
+
                 $('.photo_slider').slick({
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -42,7 +40,6 @@
                     infinite: true,
                     slidesToShow: 1,
                     adaptiveHeight: true
-                    reInit: slick,
                 });
             }); 
         </script>
