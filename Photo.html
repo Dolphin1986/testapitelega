@@ -36,7 +36,6 @@
                     cache: false,  
                     success: function(html){  
                         $("#content").html(html); 
-                        $('.photo_slider').slick($opts);
                     }
                 });   
             }  
@@ -44,6 +43,7 @@
             $(document).ready(function(){  
                 show();  
                 setInterval('show()',2000);
+                $('.photo_slider').slick($opts);
             }); 
         </script>
     </body>  
