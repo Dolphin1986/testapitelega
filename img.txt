@@ -1,1 +1,0 @@
-a:1:{i:0;s:98:"https://api.telegram.org/file/bot1228487916:AAHi6eOerKee0pp20YVbUgei57DILMQe33Y/photos/file_29.jpg";}
