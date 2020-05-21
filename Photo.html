@@ -17,17 +17,24 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <script>
-            var options = {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                // autoplay: true,
-                autoplaySpeed: 2000,
-                infinite: true,
-                slidesToShow: 1,
-                adaptiveHeight: true
+            function slickCarousel() {
+                  $('.photo_slider').slick({
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    // autoplay: true,
+                    autoplaySpeed: 2000,
+                    infinite: true,
+                    slidesToShow: 1,
+                    adaptiveHeight: true
+                  });
+                }
+
+            function destroyCarousel() {
+              if ($('.photo_slider').hasClass('slick-initialized')) {
+                $('.photo_slider').slick('destroy');
+              }      
             }
 
-            $('.photo_slider').slick('unslick');
 
             function show()  
             {  
@@ -35,8 +42,9 @@
                     url: "img.php",  
                     cache: false,  
                     success: function(html){  
-                        $("#content_01").html(html);
-                        setTimeout(function () {$(".photo_slider").slick(options)}, 500);
+                        $("#content").html(html);
+                       destroyCarousel()
+                        slickCarousel();
                     }
                 });  
             }  
